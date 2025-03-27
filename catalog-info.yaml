@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: uwgmwtxvl-python-gitops
+  description: This is GitOps manifest for uwgmwtxvl-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=uwgmwtxvl-python
+    backstage.io/kubernetes-id: uwgmwtxvl-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: uwgmwtxvl-python   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:uwgmwtxvl-python
